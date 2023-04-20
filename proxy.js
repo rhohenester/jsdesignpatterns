@@ -14,17 +14,31 @@ const person = {
     nationality: "brasilianerin",
 };
 
+//Reflect
+/*
+
+    Das Reflect-Namespace-Objekt enthält statische Methoden zum Aufrufen von abfangbaren internen JavaScript-Objektmethoden. 
+    Die Methoden sind dieselben wie die von Proxy-Handlern.
+
+    JavaScript bietet ein integriertes Objekt namens Reflect, das es uns erleichtert, das Zielobjekt bei der Arbeit mit Proxies zu manipulieren.
+    Früher haben wir versucht, Eigenschaften im Zielobjekt innerhalb des Proxys zu ändern und darauf zuzugreifen, indem wir die Werte direkt mit der Klammer-Notation
+    abgerufen oder gesetzt haben. Stattdessen können wir das Reflect-Objekt verwenden. Die Methoden des Reflect-Objekts haben denselben Namen wie die Methoden des
+    Handler-Objekts. Anstatt auf Eigenschaften über obj[prop] zuzugreifen oder Eigenschaften über obj[prop] = value zu setzen,
+    können wir auf Eigenschaften des Zielobjekts über Reflect.get() und Reflect.set() zugreifen oder diese ändern. 
+    Die Methoden erhalten dieselben Argumente wie die Methoden des Handler-Objekts.
+*/
 const personProxy = new Proxy(person, {
     get: (obj, prop) => {
         if (!obj[prop]) {
             console.log(`Hmm ... diese Eigenschaft scheint auf dem Zielobjekt nicht zu existieren.`);
         } else {
-            console.log(`Der Wert von ${prop} ist ${obj[prop]}`);
+            console.log(`Der Wert von ${prop} ist ${Reflect.get(obj, prop)}`);
         }
 
     },
     set: (obj, prop, value) => {
         console.log(`${prop} wurde von ${obj[prop]} zu ${value} geändert.`)
-        obj[prop] = value;
+        Reflect.set(obj, prop, value);
     },
 });
+
