@@ -14,7 +14,7 @@ class Counter {
   constructor() {
     //Es kann nur eine Instanz der Klasse "Counter" erstellt werden.
     if (instance) {
-      throw new Error("You can only create one instance!");
+      throw new Error("Drecksau!");
     }
     instance = this;
   }
