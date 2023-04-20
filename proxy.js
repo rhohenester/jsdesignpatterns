@@ -11,7 +11,7 @@
 const person = {
     name: "Gisele Bündchen",
     age: 42,
-    nationality: "brasilianischen",
+    nationality: "brasilianerin",
 };
 
 const personProxy = new Proxy(person, {
