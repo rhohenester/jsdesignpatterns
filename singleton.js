@@ -1,4 +1,4 @@
-//Singleton-Muster
+//Singleton Pattern
 //Teile eine einzelne globale Instanz in deiner Applikation.
 
 //Singletons sind Klassen, die nur einmal instanziiert werden können und global 

@@ -1,4 +1,4 @@
-/* Proxy-Muster
+/* Proxy Pattern
     Abfangen und Steuern von Interaktionen auf Zielobjekte.
     Mit einem Proxy-Objekt haben wir mehr Kontrolle über die Interaktionen mit bestimmten Objekten. Ein Proxy-Objekt kann das Verhalten bestimmen, 
     wann immer wir mit dem Objekt interagieren, z.B. wenn wir einen Wert abrufen oder einen Wert setzen.
